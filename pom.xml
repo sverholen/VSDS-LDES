@@ -37,7 +37,8 @@
 		<junit.version>4.13.2</junit.version>
 		<mockito.version>4.5.1</mockito.version>
 		<wiremock-jre8.version>2.33.2</wiremock-jre8.version>
-		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version>
+<!-- 		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version> -->
+		<de.flapdoodle.embed.mongo.version>2.2.0</de.flapdoodle.embed.mongo.version>
 
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
@@ -240,23 +241,6 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${surefire.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>net.revelc.code.formatter</groupId>
-					<artifactId>formatter-maven-plugin</artifactId>
-					<version>${formatter-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>validate</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<skip>
-							${skipFormatCode}
-						</skip>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
