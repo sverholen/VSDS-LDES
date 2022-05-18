@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.vlaanderen.informatievlaanderen.vsds</groupId>
+	<artifactId>ldes</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>The VSDS (Vlaamse Sensor Data Space) project aims to provide a reference implementation for LDES</description>
+
+	<properties>
+		<project.base.groupId>be.vlaanderen.informatievlaanderen.vsds</project.base.groupId>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+
+		<spring-boot.version>2.6.7</spring-boot.version>
+		<spring.version>5.3.20</spring.version>
+		<lombok.version>1.18.24</lombok.version>
+
+		<json-simple.version>1.1.1</json-simple.version>
+		<jakarta.json>2.0.1</jakarta.json>
+		<titanium-json-ld.version>1.3.0</titanium-json-ld.version>
+		<apache-jena.version>4.5.0</apache-jena.version>
+
+		<jupiter.version>5.8.2</jupiter.version>
+		<byte-buddy.version>1.12.10</byte-buddy.version>
+		<skipFormatCode>false</skipFormatCode>
+		<nifi-api.version>1.16.0</nifi-api.version>
+		<nifi-utils.version>1.16.0</nifi-utils.version>
+		<nifi-mock.version>1.16.0</nifi-mock.version>
+
+		<junit.version>4.13.2</junit.version>
+		<mockito.version>4.5.1</mockito.version>
+		<wiremock-jre8.version>2.33.2</wiremock-jre8.version>
+		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version>
+
+		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+		<formatter-maven-plugin.version>2.18.0</formatter-maven-plugin.version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ############################################################## -->
+			<!-- VSDS -->
+			<!-- ############################################################## -->
+			<!-- @TODO remove the modules that will not be presented as components 
+				when the project structure is ok -->
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-server</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-server-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-server-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-server-infra-mongo</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>mongo-repository-spring-boot-autoconfigure</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>mongo-repository-spring-boot-starter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>mongo-repository-library</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-server-rest</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-processors</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-processors-bundle</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.base.groupId}</groupId>
+				<artifactId>ldes-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- ############################################################## -->
+			<!-- SPRING -->
+			<!-- ############################################################## -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- ############################################################## -->
+			<!-- SPRING BOOT -->
+			<!-- ############################################################## -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<!-- ############################################################## -->
+			<!-- JSON & RDF -->
+			<!-- ############################################################## -->
+			<dependency>
+				<groupId>com.googlecode.json-simple</groupId>
+				<artifactId>json-simple</artifactId>
+				<version>${json-simple.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.apicatalog</groupId>
+				<artifactId>titanium-json-ld</artifactId>
+				<version>${titanium-json-ld.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>jakarta.json</artifactId>
+				<version>${jakarta.json}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.jena</groupId>
+				<artifactId>apache-jena-libs</artifactId>
+				<version>${apache-jena.version}</version>
+				<type>pom</type>
+			</dependency>
+
+			<!-- ############################################################## -->
+			<!-- NIFI -->
+			<!-- ############################################################## -->
+			<dependency>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-api</artifactId>
+				<version>${nifi-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-utils</artifactId>
+				<version>${nifi-utils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-mock</artifactId>
+				<version>${nifi-mock.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- ############################################################## -->
+			<!-- TESTING -->
+			<!-- ############################################################## -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.junit.vintage</groupId>
+						<artifactId>junit-vintage-engine</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>net.bytebuddy</groupId>
+				<artifactId>byte-buddy</artifactId>
+				<version>${byte-buddy.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.flapdoodle.embed</groupId>
+				<artifactId>de.flapdoodle.embed.mongo</artifactId>
+				<version>${de.flapdoodle.embed.mongo.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock-jre8</artifactId>
+				<version>${wiremock-jre8.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>net.revelc.code.formatter</groupId>
+					<artifactId>formatter-maven-plugin</artifactId>
+					<version>${formatter-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>validate</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<skip>
+							${skipFormatCode}
+						</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven-assembly-plugin.version}</version>
+
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+
+					<executions>
+						<execution>
+							<id>make-assembly</id>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+						</execution>
+					</executions>
+
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<!-- <plugins> -->
+		<!-- <plugin> -->
+		<!-- <groupId>net.revelc.code.formatter</groupId> -->
+		<!-- <artifactId>formatter-maven-plugin</artifactId> -->
+		<!-- </plugin> -->
+		<!-- </plugins> -->
+	</build>
+</project>
