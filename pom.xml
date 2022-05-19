@@ -88,11 +88,6 @@
 			</dependency>
 			<dependency>
 				<groupId>${project.base.groupId}</groupId>
-				<artifactId>ldes-server-rest</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.base.groupId}</groupId>
 				<artifactId>ldes-processors</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -156,9 +151,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.jena</groupId>
-				<artifactId>apache-jena-libs</artifactId>
+				<artifactId>jena-arq</artifactId>
 				<version>${apache-jena.version}</version>
-				<type>pom</type>
 			</dependency>
 
 			<!-- ############################################################## -->
