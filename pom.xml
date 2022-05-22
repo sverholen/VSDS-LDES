@@ -17,6 +17,8 @@
 
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		
+		<skipFormatCode>false</skipFormatCode>
 
 		<spring-boot.version>2.6.7</spring-boot.version>
 		<spring.version>5.3.20</spring.version>
@@ -35,9 +37,9 @@
 
 		<junit.version>4.13.2</junit.version>
 		<mockito.version>4.5.1</mockito.version>
+		<junit-jupiter-api.version>5.8.2</junit-jupiter-api.version>
 		<wiremock-jre8.version>2.33.2</wiremock-jre8.version>
-<!-- 		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version> -->
-		<de.flapdoodle.embed.mongo.version>2.2.0</de.flapdoodle.embed.mongo.version>
+ 		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version>
 
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
