@@ -4,7 +4,7 @@
 
 	<groupId>be.vlaanderen.informatievlaanderen.vsds</groupId>
 	<artifactId>ldes</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>The VSDS (Vlaamse Sensor Data Space) project aims to provide a reference implementation for LDES</description>
 
@@ -40,6 +40,7 @@
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
 		<formatter-maven-plugin.version>2.18.0</formatter-maven-plugin.version>
+		<surefire.version>3.0.0-M6</surefire.version>
 	</properties>
 
 
@@ -225,7 +226,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M6</version>
+					<version>${surefire.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>net.revelc.code.formatter</groupId>
