@@ -46,7 +46,6 @@
 		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
 		<maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
 		<formatter-maven-plugin.version>2.18.0</formatter-maven-plugin.version>
-		<surefire.version>3.0.0-M6</surefire.version>
 	</properties>
 
 
