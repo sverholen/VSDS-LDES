@@ -30,6 +30,7 @@
 		<apache-jena.version>4.4.0</apache-jena.version>
 
 		<byte-buddy.version>1.12.10</byte-buddy.version>
+		
 		<nifi-api.version>1.16.0</nifi-api.version>
 		<nifi-utils.version>1.16.0</nifi-utils.version>
 		<nifi-mock.version>1.16.0</nifi-mock.version>
@@ -37,9 +38,7 @@
 		<junit.version>4.13.2</junit.version>
 		<jupiter.version>5.8.2</jupiter.version>
 		<junit-jupiter-api.version>5.8.2</junit-jupiter-api.version>
-
 		<mockito.version>4.5.1</mockito.version>
-		<junit-jupiter-api.version>5.8.2</junit-jupiter-api.version>
 		<wiremock-jre8.version>2.33.2</wiremock-jre8.version>
  		<de.flapdoodle.embed.mongo.version>3.4.5</de.flapdoodle.embed.mongo.version>
  		
@@ -91,11 +90,6 @@
 			<dependency>
 				<groupId>${project.base.groupId}</groupId>
 				<artifactId>mongo-repository-library</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.base.groupId}</groupId>
-				<artifactId>ldes-server-rest</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
