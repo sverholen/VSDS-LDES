@@ -1,6 +1,9 @@
-name: Maven Package
+name: 2. Build & Deploy Project
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
