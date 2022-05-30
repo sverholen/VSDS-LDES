@@ -20,8 +20,6 @@
 		
 		<skipFormatCode>false</skipFormatCode>
 
-		<skipFormatCode>false</skipFormatCode>
-
 		<spring-boot.version>2.6.7</spring-boot.version>
 		<spring.version>5.3.20</spring.version>
 		<lombok.version>1.18.24</lombok.version>
